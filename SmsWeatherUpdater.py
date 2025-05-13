@@ -36,9 +36,6 @@ class MessageForecast:
         shortForecastAfternoon= forecastInfoJson["properties"]["periods"][0]["shortForecast"]
         percipChance = forecastInfoJson["properties"]["periods"][0]["probabilityOfPrecipitation"]["value"]
         ####end of forecastPull()
-        print("Rain? ", percipChance)
-        print("Weather: ", shortForecastAfternoon)
-        print("whats it like? ", shortForecastAfternoon)
     def sendText():  
     ####start of sendText()
 		#putting the phone numbers into variables allowing for easyyyyyy change
