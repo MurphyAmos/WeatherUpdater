@@ -63,4 +63,7 @@ class MessageForecast:
     while True:
         forecastPull()
 	sendText()
-		###this loop is infinite will make it leave loop, i will make input detection so will leave on command 
+	###this loop is infinite will make it leave loop, i will make input detection so will leave on command 
+        time.sleep((60*60)*24)#24hours
+	
+####end of Run sequence
