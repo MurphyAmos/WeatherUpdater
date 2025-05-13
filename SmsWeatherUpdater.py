@@ -62,6 +62,5 @@ class MessageForecast:
 	#i put this in forever while loop
     while True:
         forecastPull()
-        
-		#sendText()
+	sendText()
 		###this loop is infinite will make it leave loop, i will make input detection so will leave on command 
