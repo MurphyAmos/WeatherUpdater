@@ -6,8 +6,7 @@ from citiesReader import pullCityData
 class MessageForecast:
     pullCityObj = pullCityData
     global latLong
-    latLong = pullCityObj.readnReturn()    
-
+    latLong = pullCityObj.readnReturn()
     def forecastPull():
         def pullGrid(latNlong):
 	    #pulling grid points and returning them
@@ -23,31 +22,31 @@ class MessageForecast:
         forecastInfo=requests.get(f"https://api.weather.gov/gridpoints/HGX/{gridPoints}/forecast")
         #turn it in to text
         forecastInfoJson = json.loads(forecastInfo.text)
-		#might make variables and hold them or just directly pull them in text message sender thingy	
+	#might make variables and hold them or just directly pull them in text message sender thingy	
 
-		###in this half of the function i will hold the info in some global variables
+	###in this half of the function i will hold the info in some global variables
         global temperatureAfternoon
         global shortForecastAfternoon
         global percipChance
 
-		#here we are just using json and oulling the temp,short forecast, and rain%
-		#yes this is hard to read, but i dont really care as it wont change 
+	#here we are just using json and oulling the temp,short forecast, and rain%
+	#yes this is hard to read, but i dont really care as it wont change 
         temperatureAfternoon = forecastInfoJson["properties"]["periods"][0]["temperature"]
         shortForecastAfternoon= forecastInfoJson["properties"]["periods"][0]["shortForecast"]
         percipChance = forecastInfoJson["properties"]["periods"][0]["probabilityOfPrecipitation"]["value"]
         ####end of forecastPull()
     def sendText():  
     ####start of sendText()
-		#putting the phone numbers into variables allowing for easyyyyyy change
+	#putting the phone numbers into variables allowing for easyyyyyy change
         fromNumber = "+1[TWILIO_FROM_NUMBER]"			
         toNumber = "+1[TWILIO_TO_NUMBER]"
 
-		###this will be used as a text to send this is the outline it works boom pow
+	###this will be used as a text to send this is the outline it works boom pow
         account_sid = "[TWILIO SID]"
         auth_token = "[TWILIO_API_KEY/TOKEN]"
         client = Client(account_sid, auth_token)
 
-		###the next half will be me making and sending the text itself!
+	###the next half will be me making and sending the text itself!
 
         message = client.messages.create(
         from_=f"{fromNumber}",
