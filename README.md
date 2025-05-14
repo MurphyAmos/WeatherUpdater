@@ -1,9 +1,22 @@
-TO USE THIS YOU MUST HAVE A TWILIO ACCOUNT AND SET IT UP. A LINK WILL BE PUT BELOW FOR ACCOUNT SET UP
-TWILIO : https://www.twilio.com/en-us
+This project fetches weather forecast data from the U.S. National Weather Service and sends it via SMS using Twilio. It requires a user to input a U.S. city, county, and state to pull localized weather data.
 
+Files Overview
+citiesReader.py
+Handles city data extraction from a CSV file containing U.S. city info.
 
-Weather.Gov Api Explanation:
+Key Components:
 
-  This program takes the weather from the weather.gov API. To get this data we take the location of whatever the user would like to look at!
-If you would like to change it, you must first locate the grid points of said city by Using this endpoint 'https://api.weather.gov/points/{latitude},{longitude}' to request the grid points of your city via latitude and longitude. 
-After this you can do 'https://api.weather.gov/gridpoints/{office}/{gridX},{gridY}/forecast' to request/pull the data with the grid points you have just returned. 
+User Input: Prompts for state, city, and county.
+
+readnReturn() Method: Parses us_cities.csv to match user input and return the corresponding latitude and longitude.
+
+Make sure the us_cities.csv file has state, city, and county data in the expected column positions (indexes 2, 3, 4 for state, city, county, and 5, 6 for lat/long).
+
+messageForecast.py Fetches weather forecasts from the National Weather Service API and sends a text message via Twilio with the daily forecast.
+
+Key Components:
+  forecastPull() Method: Uses latitude/longitude to pull forecast data (temperature, precipitation, summary).
+  
+  sendText() Method: Sends the forecast via Twilio SMS.
+  
+  Run Loop: Runs every 24 hours indefinitely, sending updates daily.
