@@ -15,7 +15,7 @@ Make sure the us_cities.csv file has state, city, and county data in the expecte
 messageForecast.py Fetches weather forecasts from the National Weather Service API and sends a text message via Twilio with the daily forecast.
 
 Key Components:
-\tforecastPull() Method: Uses latitude/longitude to pull forecast data (temperature, precipitation, summary).
+forecastPull() Method: Uses latitude/longitude to pull forecast data (temperature, precipitation, summary).
   
   sendText() Method: Sends the forecast via Twilio SMS.
   
