@@ -1,8 +1,6 @@
 This project fetches weather forecast data from the U.S. National Weather Service and sends it via SMS using Twilio. It requires a user to input a U.S. city, county, and state to pull localized weather data.
 
-Files Overview
-citiesReader.py
-Handles city data extraction from a CSV file containing U.S. city info.
+"citiesReader.py" Handles city data extraction from a CSV file containing U.S. city info.
 
 Key Components:
 
