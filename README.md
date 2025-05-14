@@ -17,4 +17,4 @@ Key Components:
   
 "sendText()" Method: Sends the forecast via Twilio SMS.
   
-  Run Loop: Runs every 24 hours indefinitely, sending updates daily.
+Run Loop: Runs every 24 hours indefinitely, sending updates daily.
