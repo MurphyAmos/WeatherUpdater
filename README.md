@@ -6,11 +6,11 @@ Key Components:
 
 User Input: Prompts for state, city, and county.
 
-readnReturn() Method: Parses us_cities.csv to match user input and return the corresponding latitude and longitude.
+"readnReturn()" Method: Parses us_cities.csv to match user input and return the corresponding latitude and longitude.
 
-Make sure the us_cities.csv file has state, city, and county data in the expected column positions (indexes 2, 3, 4 for state, city, county, and 5, 6 for lat/long).
+Make sure the "us_cities.csv" file has state, city, and county data in the expected column positions (indexes 2, 3, 4 for state, city, county, and 5, 6 for lat/long).
 
-messageForecast.py Fetches weather forecasts from the National Weather Service API and sends a text message via Twilio with the daily forecast.
+"messageForecast.py" Fetches weather forecasts from the National Weather Service API and sends a text message via Twilio with the daily forecast.
 
 Key Components:
 forecastPull() Method: Uses latitude/longitude to pull forecast data (temperature, precipitation, summary).
