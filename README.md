@@ -2,8 +2,7 @@ This project fetches weather forecast data from the U.S. National Weather Servic
 
 "citiesReader.py" Handles city data extraction from a CSV file containing U.S. city info.
 
-Key Components:
-
+Breakdown of Importance
 User Input: Prompts for state, city, and county.
 
 "readnReturn()" Method: Parses us_cities.csv to match user input and return the corresponding latitude and longitude.
