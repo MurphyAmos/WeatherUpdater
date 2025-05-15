@@ -18,7 +18,6 @@ class MessageForecast:
 	            return gridXnY    
 	        gridPoints =pullGrid(latLong)
 	        ####start of forecastPull()
-	        #request the JSON; grid and office are static for Houston texas
 	        forecastInfo=requests.get(f"https://api.weather.gov/gridpoints/HGX/{gridPoints}/forecast")
 	        #turn it in to text
 	        forecastInfoJson = json.loads(forecastInfo.text)
