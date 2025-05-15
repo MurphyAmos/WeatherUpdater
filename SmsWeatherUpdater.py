@@ -10,6 +10,7 @@ class MessageForecast:
 	def forecastPull():
 	        def pullGrid(latNlong):
 		    #pulling grid points and returning them
+		    #request gird points based upon long and lat in cities reader.
 	            gridInfo=requests.get(f"https://api.weather.gov/points/{latNlong}")
 	            gridInfoJson = json.loads(gridInfo.text)
 	            gridXPoint=gridInfoJson["properties"]["gridX"]
@@ -18,6 +19,7 @@ class MessageForecast:
 	            return gridXnY    
 	        gridPoints =pullGrid(latLong)
 	        ####start of forecastPull()
+		#we take our return value and put it back into our api to find the actual weather!
 	        forecastInfo=requests.get(f"https://api.weather.gov/gridpoints/HGX/{gridPoints}/forecast")
 	        #turn it in to text
 	        forecastInfoJson = json.loads(forecastInfo.text)
